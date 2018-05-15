@@ -1,3 +1,4 @@
+#https://gorails.com/setup/ubuntu/18.04
 read -p "Insert a Ruby Version of your preference: " ruby_version 
 read -p "Insert a Rails Version of your preference: " rails_version
 read -p "Insert a Node Version of your preference: " node_version
