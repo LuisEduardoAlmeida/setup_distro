@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# adicinor esta lina abaixo no source.list
+# deb http://security.ubuntu.com/ubuntu bionic-security main
 # bash script for installing Rails environment on Ubuntu 12.04 Desktop
 #
 # Some sources has been changed to mirrors in China mainland.
@@ -28,10 +29,18 @@ sudo aptitude update
 
 echo ""
 echo "======================================="
+echo "========= Installing gnupg2 ========="
+echo "======================================="
+echo ""
+sudo apt install gnupg2 -y
+
+echo ""
+echo "======================================="
 echo "=========== Installing RVM ============"
 echo "======================================="
 echo ""
-curl -L get.rvm.io | bash -s stable
+gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+\curl -sSL https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 echo -e '\n[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm # Load RVM into a shell session *as a function*' >> ~/.bashrc
 
@@ -41,7 +50,9 @@ echo "======= Installing Dependencies ======="
 echo "======================================="
 echo ""
 rvm requirements
-sudo aptitude -y install vim wget build-essential openssl libreadline6 libreadline6-dev git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+#sudo aptitude -y install vim wget build-essential openssl libreadline6 libreadline6-dev git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+sudo apt-get -y install vim wget build-essential openssl libreadline-dev libreadline-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev autoconf libc6-dev libncurses-dev automake libtool bison subversion libssl-dev
+
 # rvm --skip-autoreconf pkg install readline
 # rvm pkg install zlib
 
