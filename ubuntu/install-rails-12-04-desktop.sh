@@ -51,7 +51,7 @@ echo "======================================="
 echo ""
 rvm requirements
 #sudo aptitude -y install vim wget build-essential openssl libreadline6 libreadline6-dev git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
-sudo apt-get -y install vim wget build-essential openssl libreadline-dev libreadline-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev autoconf libc6-dev libncurses-dev automake libtool bison subversion libssl-dev
+sudo apt-get -y install vim wget build-essential openssl libreadline-dev libreadline-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev autoconf libc6-dev libncurses-dev automake libtool bison subversion libssl-dev libv8-dev nodejs  libpq-dev postgresql-libs
 
 # rvm --skip-autoreconf pkg install readline
 # rvm pkg install zlib
